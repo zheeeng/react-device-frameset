@@ -51,5 +51,12 @@
     "vite-pages-theme-basic": "^3.0.0",
     "vite-plugin-mdx": "^3.3.1",
     "vite-plugin-react-pages": "^3.0.0"
-  }
+  },
+  "main": "lib/DeviceFrameset.js",
+  "files": [
+    "dist",
+    "lib",
+    "pages",
+    "src"
+  ]
 }
