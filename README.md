@@ -8,6 +8,9 @@ This is yet another device frameset component for React.
 * [![language](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](http://typescriptlang.org/) Type Safe and under maintainable
 * Sample for reference
 
+![frameset-screenshot](https://user-images.githubusercontent.com/1303154/120062053-a58a6200-c092-11eb-9fec-fa0dd3609645.png)
+
+
 ## Installation
 
 ```bash
