@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "baseUrl": ".",
     "jsx": "react",
     "lib": ["ES2015", "DOM"],
+    "declaration": true,
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "strict": true,
@@ -13,8 +13,7 @@
     "strictBindCallApply": true,
     "strictPropertyInitialization": true,
     "alwaysStrict": true,
-    "paths": {
-      "src/*": ["./src/*"]
-    }
-  }
+    "outDir": "lib",
+  },
+  "include": ["src/**/*"]
 }
