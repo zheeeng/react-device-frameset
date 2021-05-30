@@ -14,6 +14,7 @@
     "strictPropertyInitialization": true,
     "alwaysStrict": true,
     "outDir": "lib",
+    "noErrorTruncation": true
   },
   "include": ["src/**/*"]
 }

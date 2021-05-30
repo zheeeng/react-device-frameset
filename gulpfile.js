@@ -26,4 +26,20 @@ function buildCss () {
       .pipe(dest(config.buildCss))
 }
 
+function genSignature () {
+   const DeviceOptions = require('./lib/DeviceOptions').DeviceOptions
+   const signature = Object.keys(DeviceOptions).map((key) => {
+      const [device, info] = [key, DeviceOptions[key]]
+      const deviceSignature = `device: ${device}`
+      const colorSignature = (info.colors && info.colors.length) ? `, color: '${info.colors.join('\' | \'')}'` : ''
+      const landscapeSignature = info.hasLandscape ? `, landscape: boolean` : ''
+
+      return `| { ${deviceSignature}${colorSignature}${landscapeSignature} }`
+   })
+   .join('\n')
+
+   console.log({ signature })
+}
+
 exports.buildCss = buildCss
+exports.genSignature = genSignature

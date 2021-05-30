@@ -1,3 +1,5 @@
+import type { Compute, OptionField, OmitFieldByType } from './helper'
+
 export const i = 11
 
 type DeviceType<Device extends string, Colors extends readonly string[]> = {
@@ -80,15 +82,12 @@ export const DeviceOptions = {
     }),
 }
 
-type DefaultTypeForNever<T, D> = T[] extends never[] ? D : T
-
-
 type DevicesType<R extends Record<string, DeviceType<string, readonly string[]>>> = {
-    [key in keyof R]: {
+    [key in keyof R]: Compute<OptionField<OmitFieldByType<{
         device: key,
-        color: DefaultTypeForNever<R[key]['colors'][number], undefined>,
+        color: R[key]['colors'][number],
         landscape: R[key]['hasLandscape'] extends true ? (boolean | undefined) : never
-    } 
+    }, never>>>
 }[keyof R]
 
 export type DeviceFramesetProps = DevicesType<typeof DeviceOptions>
