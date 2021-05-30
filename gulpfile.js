@@ -4,6 +4,7 @@ const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
 const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps');
+const replace = require('gulp-replace');
 
 const config = {
    srcCss : 'src/scss/**/*.scss',
@@ -26,11 +27,11 @@ function buildCss () {
       .pipe(dest(config.buildCss))
 }
 
-function genSignature () {
+function genSignature () {   
    const DeviceOptions = require('./lib/DeviceOptions').DeviceOptions
    const signature = Object.keys(DeviceOptions).map((key) => {
       const [device, info] = [key, DeviceOptions[key]]
-      const deviceSignature = `device: ${device}`
+      const deviceSignature = `device: '${device}'`
       const colorSignature = (info.colors && info.colors.length) ? `, color: '${info.colors.join('\' | \'')}'` : ''
       const landscapeSignature = info.hasLandscape ? `, landscape: boolean` : ''
 
@@ -39,6 +40,10 @@ function genSignature () {
    .join('\n')
 
    console.log({ signature })
+
+   return src('README.md', {base: './'})
+      .pipe(replace(/```ts\s\(signature\)(.|[\r\n])*```/, `\`\`\`ts (signature)\n${signature}\n\`\`\``))
+      .pipe(dest('./'));
 }
 
 exports.buildCss = buildCss

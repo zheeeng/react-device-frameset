@@ -31,32 +31,18 @@ import 'react-device-frameset/lib/css/marvel-devices.min.css'
 
 ### Signature
 
-```ts
-type DeviceFramesetProps =
-| { device: 'iPhone X', landscape?: 'boolean' }
-| { device: 'iPhone 8', color: 'black' | 'silver' | 'gold', landscape?: 'boolean' }
-| { device: 'iPhone 8 Plus', color: 'black' | 'silver' | 'gold', landscape?: 'boolean' }
-| { device: 'iPhone 5s', color: 'black' | 'silver' | 'gold', landscape?: 'boolean' }
-| { device: 'iPhone 5c', color: 'white' | 'red' | 'yellow' | 'green' | 'blue', landscape?: 'boolean' }
-| { device: 'iPhone 4s', color: 'black' | 'silver', landscape?: 'boolean' }
-| { device: 'Galaxy Note 8', landscape?: 'boolean' }
-| { device: 'Nexus 5', landscape?: 'boolean' }
-| { device: 'Lumia 920', color: 'black' | 'white' | 'yellow' | 'red' | 'blue', landscape?: 'boolean' }
-| { device: 'Samsung Galaxy S5', color: 'white' | 'black', landscape?: 'boolean' }
-| { device: 'HTC One', landscape?: 'boolean' }
-| { device: 'iPad Mini', color: 'black' | 'silver', landscape?: 'boolean' }
+```ts (signature)
+| { device: 'iPhone X', landscape: boolean }
+| { device: 'iPhone 8', color: 'black' | 'silver' | 'gold', landscape: boolean }
+| { device: 'iPhone 8 Plus', color: 'black' | 'silver' | 'gold', landscape: boolean }
+| { device: 'iPhone 5s', color: 'black' | 'silver' | 'gold', landscape: boolean }
+| { device: 'iPhone 5c', color: 'white' | 'red' | 'yellow' | 'green' | 'blue', landscape: boolean }
+| { device: 'iPhone 4s', color: 'black' | 'silver', landscape: boolean }
+| { device: 'Galaxy Note 8', landscape: boolean }
+| { device: 'Nexus 5', landscape: boolean }
+| { device: 'Lumia 920', color: 'black' | 'white' | 'yellow' | 'red' | 'blue', landscape: boolean }
+| { device: 'Samsung Galaxy S5', color: 'white' | 'black', landscape: boolean }
+| { device: 'HTC One', landscape: boolean }
+| { device: 'iPad Mini', color: 'black' | 'silver', landscape: boolean }
 | { device: 'MacBook Pro' }
-```
-
-## If you like our Device Selector Component
-
-```tsx
-import { DeviceFrameset } from 'react-device-frameset'
-import { DeviceSelector } from 'react-device-frameset/lib/DeviceSelector'
-import 'react-device-frameset/lib/css/marvel-devices.min.css'
-import 'react-device-frameset/lib/css/device-selector.min.css'
-
-<DeviceSelector>
-    {props => <DeviceFrameset {...props} />}
-</DeviceSelector>
 ```

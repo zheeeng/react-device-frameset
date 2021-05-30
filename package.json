@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite serve",
-    "build": "npm run build:lib && npm run build:css && npm run build:site",
+    "build": "npm run build:lib && npm run build:css && npm run build:site && build:readme",
     "build:lib": "rm -rf lib && tsc -p tsconfig.json",
     "build:site": "rm -rf dist && vite build --outDir dist",
     "build:css": "gulp buildCss",
+    "build:readme": "gulp genSignature",
     "ssr": "rm -rf dist && vite-pages ssr && serve dist",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
