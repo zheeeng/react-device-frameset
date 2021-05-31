@@ -1,5 +1,11 @@
 # React Device Frameset
 
+[![NPM](https://nodei.co/npm/react-device-frameset.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-device-frameset/)
+
+![example workflow](https://github.com/zheeeng/react-device-frameset/actions/workflows/pages.yml/badge.svg)
+[![npm version](https://img.shields.io/npm/v/export-from-json.svg)](https://www.npmjs.com/package/react-device-frameset)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-device-frameset.svg)](https://unpkg.com/react-device-frameset/dist/umd/index.min.js)
+
 This is yet another device frameset component for React.
 
 ## [Demo](https://react-device-frameset.zheeeng.me)
