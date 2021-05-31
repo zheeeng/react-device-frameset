@@ -1,6 +1,6 @@
 {
   "name": "react-device-frameset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "dev": "vite serve",
     "build": "npm run build:lib && npm run build:css && npm run build:ssr && build:readme",
@@ -10,7 +10,6 @@
     "build:readme": "gulp genSignature",
     "build:ssr": "rm -rf dist && vite-pages ssr && serve dist",
     "prepublish": "npm run build:lib && npm run build:css",
-    "publish": "npm run publish",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
