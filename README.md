@@ -24,12 +24,16 @@ yarn add react-device-frameset (or npm)
 import { DeviceFrameset } from 'react-device-frameset'
 import 'react-device-frameset/lib/css/marvel-devices.min.css'
 
-<DeviceFrameset device="iPhone 8" color="gold" landscape>
-    <div>Hello world</div>
-</DeviceFrameset>
+export const App = () => {
+    return (
+        <DeviceFrameset device="iPhone 8" color="gold" landscape>
+            <div>Hello world</div>
+        </DeviceFrameset>
+    )
+}
 ```
 
-### Signature
+### Prop Signature
 
 ```ts (signature)
 | { device: 'iPhone X', landscape: boolean }
@@ -45,4 +49,20 @@ import 'react-device-frameset/lib/css/marvel-devices.min.css'
 | { device: 'HTC One', landscape: boolean }
 | { device: 'iPad Mini', color: 'black' | 'silver', landscape: boolean }
 | { device: 'MacBook Pro' }
+```
+
+## If you like the frameset selector?
+
+```tsx
+import { DeviceFrameset, DeviceSelector } from 'react-device-frameset'
+import 'react-device-frameset/lib/css/marvel-devices.min.css'
+import 'react-device-frameset/lib/css/device-selector.min.css'
+
+export const App = () => {
+    return (
+        <DeviceSelector>
+            {props => <DeviceFrameset {...props} />}
+        </DeviceSelector>
+    )
+}
 ```

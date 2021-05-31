@@ -42,7 +42,7 @@ function genSignature () {
    console.log({ signature })
 
    return src('README.md', {base: './'})
-      .pipe(replace(/```ts\s\(signature\)(.|[\r\n])*```/, `\`\`\`ts (signature)\n${signature}\n\`\`\``))
+      .pipe(replace(/```ts\s\(signature\)(.|[\r\n])*?```/, `\`\`\`ts (signature)\n${signature}\n\`\`\``))
       .pipe(dest('./'));
 }
 
