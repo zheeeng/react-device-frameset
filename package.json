@@ -9,6 +9,8 @@
     "build:css": "gulp buildCss",
     "build:readme": "gulp genSignature",
     "build:ssr": "rm -rf dist && vite-pages ssr && serve dist",
+    "prepublish": "npm run build:lib && npm run build:css",
+    "publish": "npm run publish",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
