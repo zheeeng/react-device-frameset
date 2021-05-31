@@ -11,7 +11,7 @@
     "build:ssr": "rm -rf dist && vite-pages ssr",
     "build:pack": "npm run build:lib && npm run build:css && npm run build:readme",
     "build:pages": "npm run build:pack && npm run build:ssr",
-    "prepublish": "npm run build:pack",
+    "prepublishonly": "npm run build:pack",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },

@@ -11,5 +11,15 @@ export default defineConfig({
     pages({
       pagesDir: path.join(__dirname, 'pages'),
     }),
-  ]
+    {
+      name: 'plain text',
+      transform (code, id) {
+        if (/\?te?xt$/.test(id)) {
+          return `export default () => ${JSON.stringify(code)}`
+        }
+
+        return code
+      },
+    }
+  ],
 })
