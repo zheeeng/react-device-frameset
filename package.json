@@ -1,20 +1,7 @@
 {
   "name": "react-device-frameset",
-  "version": "1.0.2",
-  "scripts": {
-    "dev": "vite serve",
-    "build": "npm run build:pages",
-    "build:lib": "rm -rf lib && tsc -p tsconfig.json",
-    "build:css": "gulp buildCss",
-    "build:readme": "gulp genSignature",
-    "build:site": "rm -rf dist && vite build --outDir dist",
-    "build:ssr": "rm -rf dist && vite-pages ssr",
-    "build:pack": "npm run build:lib && npm run build:css && npm run build:readme",
-    "build:pages": "npm run build:pack && npm run build:ssr",
-    "prepublishonly": "npm run build:pack",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
+  "author": "Zheeeng <hi@zheeeng.me>",
+  "description": "This is yet another device frameset component for React.",
   "keywords": [
     "frameset",
     "component",
@@ -34,13 +21,32 @@
     "vite",
     "typescript"
   ],
-  "author": "Zheeeng <hi@zheeeng.me>",
-  "repository": "https://github.com/zheeeng/react-device-frameset.git",
-  "license": "ISC",
+  "repository": "https://github.com/zheeeng/react-device-frameset",
+  "version": "1.0.2",
+  "license": "MIT",
+  "main": "lib/DeviceFrameset.js",
+  "scripts": {
+    "dev": "vite serve",
+    "build": "npm run build:pages",
+    "build:lib": "rm -rf lib && tsc -p tsconfig.json",
+    "build:css": "gulp buildCss",
+    "build:readme": "gulp genSignature",
+    "build:site": "rm -rf dist && vite build --outDir dist",
+    "build:ssr": "rm -rf dist && vite-pages ssr",
+    "build:pack": "npm run build:lib && npm run build:css && npm run build:readme",
+    "build:pages": "npm run build:pack && npm run build:ssr",
+    "prepublishOnly": "npm run build:pack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "devDependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
@@ -61,13 +67,7 @@
     "vite": "^2.0.5",
     "vite-pages-theme-basic": "^3.0.0",
     "vite-plugin-mdx": "^3.3.1",
-    "vite-plugin-react-pages": "^3.0.0"
-  },
-  "main": "lib/DeviceFrameset.js",
-  "files": [
-    "dist",
-    "lib",
-    "pages",
-    "src"
-  ]
+    "vite-plugin-react-pages": "^3.0.0",
+    "vite-plugin-virtual-plain-text": "^1.0.5"
+  }
 }

@@ -4,3 +4,4 @@ dist
 lib
 *.local
 *.tgz
+.yarn-error.log
