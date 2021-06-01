@@ -22,7 +22,7 @@
     "typescript"
   ],
   "repository": "https://github.com/zheeeng/react-device-frameset",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "main": "lib/DeviceFrameset.js",
   "scripts": {
@@ -65,7 +65,7 @@
     "sass": "^1.34.0",
     "serve": "^11.3.2",
     "vite": "^2.0.5",
-    "vite-pages-theme-basic": "^3.0.0",
+    "vite-pages-theme-basic": "^3.0.1",
     "vite-plugin-mdx": "^3.3.1",
     "vite-plugin-react-pages": "^3.0.0",
     "vite-plugin-virtual-plain-text": "^1.0.5"

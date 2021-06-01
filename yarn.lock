@@ -6511,7 +6511,7 @@ vinyl@^2.0.0:
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
 
-vite-pages-theme-basic@^3.0.0:
+vite-pages-theme-basic@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vite-pages-theme-basic/-/vite-pages-theme-basic-3.0.1.tgz#a126ddf0ea3dc2aec9b6b82184a25e147ec4d365"
   integrity sha512-4GyYIP4DhWXAcj3IwkMGeAnuidGHKPqeLLWF1dpu+CfZE2CCsSy1Dcpo2ZLMb8NSlpvbe/IuLhLfKZBF4b06Cg==
