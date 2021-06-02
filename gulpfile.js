@@ -33,7 +33,7 @@ function genSignature () {
       const [device, info] = [key, DeviceOptions[key]]
       const deviceSignature = `device: '${device}'`
       const colorSignature = (info.colors && info.colors.length) ? `, color: '${info.colors.join('\' | \'')}'` : ''
-      const landscapeSignature = info.hasLandscape ? `, landscape: boolean` : ''
+      const landscapeSignature = info.hasLandscape ? `, landscape?: boolean` : ''
 
       return `| { ${deviceSignature}${colorSignature}${landscapeSignature} }`
    })

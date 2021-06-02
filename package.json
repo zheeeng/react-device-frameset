@@ -22,7 +22,7 @@
     "typescript"
   ],
   "repository": "https://github.com/zheeeng/react-device-frameset",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "main": "lib/DeviceFrameset.js",
   "scripts": {
