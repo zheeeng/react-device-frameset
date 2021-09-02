@@ -1,8 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import aaa from "./data.json";
-console.log({
-  aaa,
-});
 
 export type ZoomableType = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
