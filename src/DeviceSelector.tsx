@@ -2,12 +2,12 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { DeviceOptions, DeviceFramesetProps } from './DeviceFrameset'
 import { DeviceName, DeviceNames } from './DeviceOptions'
 
-export type DeviceSelectorProps = {
+export type DeviceSelectorProps = React.HTMLAttributes<HTMLDivElement> & {
     banDevices?: DeviceName[],
     children: (props: DeviceFramesetProps) => React.ReactNode,
 }
 
-export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSelector ({ children, banDevices = [] }) {
+export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSelector ({ children, banDevices = [], ...divProps }) {
     const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)) as Array<keyof typeof DeviceOptions>, [])
     const [selectedDeviceIndex, setSelectedDeviceIndex] = useState(0)
     const [showMenu, setShowMenu] = useState(true)
@@ -39,7 +39,7 @@ export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSel
     } as DeviceFramesetProps
 
     return (
-        <div className="device-selector">
+        <div className="device-selector" {...divProps}>
             <dl>
                 <dt>
                     <p>The Chosen: {deviceName}</p>

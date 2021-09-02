@@ -2,12 +2,12 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { DeviceOptions, DeviceFramesetProps } from './DeviceFrameset'
 import { DeviceName, DeviceNames } from './DeviceOptions'
 
-export type DeviceEmulatorProps = {
+export type DeviceEmulatorProps = React.HTMLAttributes<HTMLDivElement> & {
     banDevices?: DeviceName[]
     children: (props: DeviceFramesetProps) => React.ReactNode,
 }
 
-export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmulator ({ children, banDevices = [] }) {
+export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmulator ({ children, banDevices = [], ...divProps }) {
     const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)) as Array<keyof typeof DeviceOptions>, [])
     const [selectedDeviceIndex, setSelectedDeviceIndex] = useState(0)
 
@@ -46,7 +46,7 @@ export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmu
     } as DeviceFramesetProps
 
     return (
-        <div className="device-emulator">
+        <div className="device-emulator" {...divProps}>
             <section>
                 <select value={deviceName} onChange={handleSelectChange}>
                     {deviceNames.map((devName, index) => (

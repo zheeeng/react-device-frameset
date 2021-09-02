@@ -3,6 +3,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     section {
         flex-shrink: 0;
@@ -13,6 +14,7 @@
         border-bottom: 1px lightgray solid;
         margin-bottom: 16px;
         padding-bottom: 24px;
+        box-sizing: content-box;
     }
 
     select, input {
@@ -45,7 +47,7 @@
 
 .device-emulator-container {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-grow: 1;
+    overflow: auto;
 }

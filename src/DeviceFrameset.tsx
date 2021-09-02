@@ -7,7 +7,7 @@ export { DeviceOptions, DeviceFramesetProps }
 
 export const DeviceFrameset = React.memo<DeviceFramesetProps>(
     function DeviceFrameset(props) {
-        const { children, device, width, height } = props
+        const { children, device, width, height, ...divProps } = props
         const color = 'color' in props ? props.color : undefined
         const landscape = 'landscape' in props ? props.landscape : undefined
 
@@ -16,6 +16,7 @@ export const DeviceFrameset = React.memo<DeviceFramesetProps>(
         return (
             <div
                 className={`marvel-device ${DeviceOptions[device].device} ${color ? color : ''} ${landscape ? 'landscape' : ''}`}
+                {...divProps}
                 style={style}
             >
                 <div className="inner" />

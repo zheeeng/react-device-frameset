@@ -122,4 +122,4 @@ type DevicesType<R extends Record<string, DeviceType<string, readonly string[]>>
     }, never>>>
 }[keyof R]
 
-export type DeviceFramesetProps = DevicesType<typeof DeviceOptions>
+export type DeviceFramesetProps = DevicesType<typeof DeviceOptions> & React.HTMLAttributes<HTMLDivElement>
