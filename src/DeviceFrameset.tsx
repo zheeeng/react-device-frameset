@@ -11,7 +11,7 @@ export const DeviceFrameset = React.memo<DeviceFramesetProps>(
         const color = 'color' in props ? props.color : undefined
         const landscape = 'landscape' in props ? props.landscape : undefined
 
-        const style = useMemo(() => landscape ? ({ width: height, height: width }) : ({ width, height }), [width, height, landscape])
+        const style = useMemo(() => (landscape && DeviceOptions[device].hasLandscape) ? ({ width: height, height: width }) : ({ width, height }), [width, height, landscape, device])
 
         return (
             <div
