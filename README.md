@@ -41,23 +41,34 @@ export const App = () => {
 
 ### Prop Signature
 
+DeviceFramesetProps:
+
 ```ts (signature)
-| { device: 'iPhone X', landscape?: boolean }
-| { device: 'iPhone 8', color: 'black' | 'silver' | 'gold', landscape?: boolean }
-| { device: 'iPhone 8 Plus', color: 'black' | 'silver' | 'gold', landscape?: boolean }
-| { device: 'iPhone 5s', color: 'black' | 'silver' | 'gold', landscape?: boolean }
-| { device: 'iPhone 5c', color: 'white' | 'red' | 'yellow' | 'green' | 'blue', landscape?: boolean }
-| { device: 'iPhone 4s', color: 'black' | 'silver', landscape?: boolean }
-| { device: 'Galaxy Note 8', landscape?: boolean }
-| { device: 'Nexus 5', landscape?: boolean }
-| { device: 'Lumia 920', color: 'black' | 'white' | 'yellow' | 'red' | 'blue', landscape?: boolean }
-| { device: 'Samsung Galaxy S5', color: 'white' | 'black', landscape?: boolean }
-| { device: 'HTC One', landscape?: boolean }
-| { device: 'iPad Mini', color: 'black' | 'silver', landscape?: boolean }
+| { device: 'iPhone X', landscape?: boolean, width?: number, height?: number }
+| { device: 'iPhone 8', color: 'black' | 'silver' | 'gold', landscape?: boolean, width?: number, height?: number }
+| { device: 'iPhone 8 Plus', color: 'black' | 'silver' | 'gold', landscape?: boolean, width?: number, height?: number }
+| { device: 'iPhone 5s', color: 'black' | 'silver' | 'gold', landscape?: boolean, width?: number, height?: number }
+| { device: 'iPhone 5c', color: 'white' | 'red' | 'yellow' | 'green' | 'blue', landscape?: boolean, width?: number, height?: number }
+| { device: 'iPhone 4s', color: 'black' | 'silver', landscape?: boolean, width?: number, height?: number }
+| { device: 'Galaxy Note 8', landscape?: boolean, width?: number, height?: number }
+| { device: 'Nexus 5', landscape?: boolean, width?: number, height?: number }
+| { device: 'Lumia 920', color: 'black' | 'white' | 'yellow' | 'red' | 'blue', landscape?: boolean, width?: number, height?: number }
+| { device: 'Samsung Galaxy S5', color: 'white' | 'black', landscape?: boolean, width?: number, height?: number }
+| { device: 'HTC One', landscape?: boolean, width?: number, height?: number }
+| { device: 'iPad Mini', color: 'black' | 'silver', landscape?: boolean, width?: number, height?: number }
 | { device: 'MacBook Pro' }
 ```
 
 ## If you like the frameset selector?
+
+```ts (signature)
+type DeviceName = "iPhone X" | "iPhone 8" | "iPhone 8 Plus" | "iPhone 5s" | "iPhone 5c" | "iPhone 4s" | "Galaxy Note 8" | "Nexus 5" | "Lumia 920" | "Samsung Galaxy S5" | "HTC One" | "iPad Mini" | "MacBook Pro"
+
+type DeviceEmulatorProps = {
+    banDevices?: DeviceName[]
+    children: (props: DeviceFramesetProps) => React.ReactNode,
+}
+```
 
 ```tsx
 import { DeviceFrameset, DeviceSelector } from 'react-device-frameset'
@@ -69,6 +80,31 @@ export const App = () => {
         <DeviceSelector>
             {props => <DeviceFrameset {...props} />}
         </DeviceSelector>
+    )
+}
+```
+
+## If you like the frameset emulator?
+
+```ts (signature)
+type DeviceName = "iPhone X" | "iPhone 8" | "iPhone 8 Plus" | "iPhone 5s" | "iPhone 5c" | "iPhone 4s" | "Galaxy Note 8" | "Nexus 5" | "Lumia 920" | "Samsung Galaxy S5" | "HTC One" | "iPad Mini" | "MacBook Pro"
+
+type DeviceEmulatorProps = {
+    banDevices?: DeviceName[]
+    children: (props: DeviceFramesetProps) => React.ReactNode,
+}
+```
+
+```tsx
+import { DeviceFrameset, DeviceEmulator } from 'react-device-frameset'
+import 'react-device-frameset/lib/css/marvel-devices.min.css'
+import 'react-device-frameset/lib/css/device-emulator.min.css'
+
+export const App = () => {
+    return (
+        <DeviceEmulator banDevices={["HTC One"]}>
+            {props => <DeviceFrameset {...props} />}
+        </DeviceEmulator>
     )
 }
 ```

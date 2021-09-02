@@ -1,18 +1,20 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { DeviceOptions, DeviceFramesetProps } from './DeviceFrameset'
+import { DeviceName, DeviceNames } from './DeviceOptions'
 
 export type DeviceSelectorProps = {
+    banDevices?: DeviceName[],
     children: (props: DeviceFramesetProps) => React.ReactNode,
 }
 
-export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSelector ({ children }) {
-    const deviceNames = useMemo(() => Object.keys(DeviceOptions) as Array<keyof typeof DeviceOptions>, [])
+export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSelector ({ children, banDevices = [] }) {
+    const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)) as Array<keyof typeof DeviceOptions>, [])
     const [selectedDeviceIndex, setSelectedDeviceIndex] = useState(0)
     const [showMenu, setShowMenu] = useState(true)
 
     const deviceName = useMemo(() => deviceNames[selectedDeviceIndex], [selectedDeviceIndex])
 
-    const { colors, hasLandscape } = useMemo(() => DeviceOptions[deviceName], [deviceName])
+    const { colors, hasLandscape, width, height } = useMemo(() => DeviceOptions[deviceName], [deviceName])
 
     const [selectedColorIndex, setSelectedColorIndex] = useState(0) 
     const [isLandscape, setIsLandscape] = useState<boolean | undefined>(undefined)
@@ -31,7 +33,9 @@ export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSel
     const props = {
         device: deviceName,
         color: selectedColor,
-        landscape: isLandscape
+        landscape: isLandscape,
+        width,
+        height,
     } as DeviceFramesetProps
 
     return (
@@ -80,7 +84,7 @@ export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSel
                         </label>
                     </dd>
                 ))}
-                </dl>
+            </dl>
         
             <div className="device-selector-container">
                 {children(props)}

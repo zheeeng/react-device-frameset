@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import type { DeviceFramesetProps } from './DeviceOptions'
 import { DeviceOptions } from './DeviceOptions'
@@ -7,12 +7,17 @@ export { DeviceOptions, DeviceFramesetProps }
 
 export const DeviceFrameset = React.memo<DeviceFramesetProps>(
     function DeviceFrameset(props) {
-        const { children, device } = props
+        const { children, device, width, height } = props
         const color = 'color' in props ? props.color : undefined
         const landscape = 'landscape' in props ? props.landscape : undefined
 
+        const style = useMemo(() => landscape ? ({ width: height, height: width }) : ({ width, height }), [width, height, landscape])
+
         return (
-            <div className={`marvel-device ${DeviceOptions[device].device} ${color ? color : ''} ${landscape ? 'landscape' : ''}`}>
+            <div
+                className={`marvel-device ${DeviceOptions[device].device} ${color ? color : ''} ${landscape ? 'landscape' : ''}`}
+                style={style}
+            >
                 <div className="inner" />
                 {device === 'Galaxy Note 8' ? <div className="overflow">
                     <div className="shadow" />

@@ -1,13 +1,10 @@
 /**
  * @title Zoomable
+ * @sort 3
  */
 
 import React from "react";
 import { Zoomable } from "../src/Zoomable";
-import aaa from "../src/data.json";
-console.log({
-  ab: aaa,
-});
 
 const Demo = () => (
   <div style={{ display: "flex", flexShrink: 0, flexWrap: "wrap" }}>
