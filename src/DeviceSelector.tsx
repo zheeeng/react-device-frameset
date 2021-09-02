@@ -30,13 +30,16 @@ export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSel
 
     const selectedColor = useMemo(() => colors[selectedColorIndex], [colors, selectedColorIndex])
 
-    const props = {
-        device: deviceName,
-        color: selectedColor,
-        landscape: isLandscape,
-        width,
-        height,
-    } as DeviceFramesetProps
+    const deviceFramesetProps = useMemo(
+        () => ({
+            device: deviceName,
+            color: selectedColor,
+            landscape: isLandscape,
+            width,
+            height,
+        }) as DeviceFramesetProps,
+        [deviceName, selectedColor, isLandscape, width, height],
+    )
 
     return (
         <div className="device-selector" {...divProps}>
@@ -87,7 +90,7 @@ export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSel
             </dl>
         
             <div className="device-selector-container">
-                {children(props)}
+                {children(deviceFramesetProps)}
             </div>
         </div>
     )

@@ -9,17 +9,14 @@ export type DeviceEmulatorProps = React.HTMLAttributes<HTMLDivElement> & {
 
 export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmulator ({ children, banDevices = [], ...divProps }) {
     const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)) as Array<keyof typeof DeviceOptions>, [])
-    const [selectedDeviceIndex, setSelectedDeviceIndex] = useState(0)
+    const [deviceName, setDeviceName] = useState<DeviceName>(deviceNames[0] ?? '')
 
     const handleSelectChange = useCallback(
         (event: React.ChangeEvent<HTMLSelectElement>) => {
-            const index = +event.target.value
-            setSelectedDeviceIndex(index)
+            setDeviceName(event.target.value as DeviceName)
         },
         [],
     )
-
-    const deviceName = useMemo(() => deviceNames[selectedDeviceIndex], [selectedDeviceIndex])
 
     const { colors, hasLandscape, width, height } = useMemo(() => DeviceOptions[deviceName], [deviceName])
 
@@ -37,22 +34,25 @@ export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmu
 
     const selectedColor = useMemo(() => colors[selectedColorIndex], [colors, selectedColorIndex])
 
-    const props = {
-        device: deviceName,
-        color: selectedColor,
-        landscape: isLandscape,
-        width,
-        height,
-    } as DeviceFramesetProps
+    const deviceFramesetProps = useMemo(
+        () => ({
+            device: deviceName,
+            color: selectedColor,
+            landscape: isLandscape,
+            width,
+            height,
+        }) as DeviceFramesetProps,
+        [deviceName, selectedColor, isLandscape, width, height],
+    )
 
     return (
         <div className="device-emulator" {...divProps}>
             <section>
                 <select value={deviceName} onChange={handleSelectChange}>
-                    {deviceNames.map((devName, index) => (
+                    {deviceNames.map((devName) => (
                         <option
                             key={devName}
-                            value={index}
+                            value={devName}
                         >{devName}</option>
                     ))}
                 </select>
@@ -64,7 +64,7 @@ export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmu
             </section>
         
             <div className="device-emulator-container">
-                {children(props)}
+                {children(deviceFramesetProps)}
             </div>
         </div>
     )
