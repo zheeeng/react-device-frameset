@@ -7,7 +7,10 @@ export { DeviceOptions, DeviceFramesetProps }
 
 export const DeviceFrameset = React.memo<DeviceFramesetProps>(
     function DeviceFrameset(props) {
-        const { children, device, width, height, ...divProps } = props
+        const { children, device, width, height, ...restProps } = props
+        // @ts-expect-error
+        const { landscape: _l, color: _c, ...divProps } = restProps
+
         const color = 'color' in props ? props.color : undefined
         const landscape = 'landscape' in props ? props.landscape : undefined
 

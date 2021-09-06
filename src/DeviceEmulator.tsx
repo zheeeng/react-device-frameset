@@ -5,50 +5,58 @@ import { DeviceName, DeviceNames } from './DeviceOptions'
 export type DeviceEmulatorProps = React.HTMLAttributes<HTMLDivElement> & {
     banDevices?: DeviceName[]
     children: (props: DeviceFramesetProps) => React.ReactNode,
+    value?: DeviceName,
+    onChange?: (deviceName: DeviceName) => void,
 }
 
-export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmulator ({ children, banDevices = [], ...divProps }) {
+export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmulator ({ children, value, onChange, banDevices = [], ...divProps }) {
     const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)) as Array<keyof typeof DeviceOptions>, [])
     const [deviceName, setDeviceName] = useState<DeviceName>(deviceNames[0] ?? '')
+    const selectedDeviceName = useMemo(() => value ?? deviceName, [value, deviceName])
 
     const handleSelectChange = useCallback(
         (event: React.ChangeEvent<HTMLSelectElement>) => {
-            setDeviceName(event.target.value as DeviceName)
+            const newDeviceName = event.target.value as DeviceName
+            if (!deviceNames.includes(newDeviceName)) throw new Error(`Invalid device name for ${newDeviceName}`)
+
+            onChange?.(newDeviceName)
+            setDeviceName(newDeviceName)
         },
-        [],
+        [deviceNames, onChange],
     )
 
-    const { colors, hasLandscape, width, height } = useMemo(() => DeviceOptions[deviceName], [deviceName])
+    const { colors, hasLandscape, width, height } = useMemo(() => DeviceOptions[selectedDeviceName], [selectedDeviceName])
 
-    const [selectedColorIndex, setSelectedColorIndex] = useState(0) 
+    const firstColor = useMemo(() => colors[0]!, [colors])
+
     const [isLandscape, setIsLandscape] = useState<boolean | undefined>(undefined)
 
-    useEffect(
-        () => { setSelectedColorIndex(0) },
-        [colors],
-    )
-    useEffect(
-        () => { setIsLandscape(hasLandscape ? false : undefined) },
-        [hasLandscape],
-    )
+    const isLandscapeChecked = useMemo(() => hasLandscape ? isLandscape : undefined, [hasLandscape, isLandscape])
 
-    const selectedColor = useMemo(() => colors[selectedColorIndex], [colors, selectedColorIndex])
+    const handleIsLandscapeChange = useCallback(
+        () => {
+            if (!hasLandscape) return
+
+            setIsLandscape(is => !is)
+        },
+        [hasLandscape]
+    )
 
     const deviceFramesetProps = useMemo(
         () => ({
-            device: deviceName,
-            color: selectedColor,
-            landscape: isLandscape,
+            device: selectedDeviceName,
+            color: firstColor,
+            landscape: isLandscapeChecked,
             width,
             height,
         }) as DeviceFramesetProps,
-        [deviceName, selectedColor, isLandscape, width, height],
+        [selectedDeviceName, firstColor, isLandscapeChecked, width, height],
     )
 
     return (
         <div className="device-emulator" {...divProps}>
             <section>
-                <select value={deviceName} onChange={handleSelectChange}>
+                <select value={selectedDeviceName} onChange={handleSelectChange}>
                     {deviceNames.map((devName) => (
                         <option
                             key={devName}
@@ -60,7 +68,7 @@ export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmu
                 <span>x</span>
                 <input disabled value={height} />
                 <label>Landscape:</label>
-                <input type="checkbox" checked={isLandscape} onClick={() => setIsLandscape(is => !is)}/>
+                <input type="checkbox" checked={!!isLandscapeChecked} disabled={!hasLandscape} onChange={handleIsLandscapeChange}/>
             </section>
         
             <div className="device-emulator-container">

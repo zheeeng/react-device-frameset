@@ -67,6 +67,8 @@ type DeviceName = "iPhone X" | "iPhone 8" | "iPhone 8 Plus" | "iPhone 5s" | "iPh
 type DeviceEmulatorProps = {
     banDevices?: DeviceName[]
     children: (props: DeviceFramesetProps) => React.ReactNode,
+    value?: DeviceName,
+    onChange?: (deviceName: DeviceName) => void, 
 }
 ```
 
@@ -92,6 +94,8 @@ type DeviceName = "iPhone X" | "iPhone 8" | "iPhone 8 Plus" | "iPhone 5s" | "iPh
 type DeviceEmulatorProps = {
     banDevices?: DeviceName[]
     children: (props: DeviceFramesetProps) => React.ReactNode,
+    value?: DeviceName,
+    onChange?: (deviceName: DeviceName) => void, 
 }
 ```
 
