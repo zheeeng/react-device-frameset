@@ -7,14 +7,19 @@ export { DeviceOptions, DeviceFramesetProps }
 
 export const DeviceFrameset = React.memo<DeviceFramesetProps>(
     function DeviceFrameset(props) {
-        const { children, device, width, height, ...restProps } = props
+        const { children, device, width, height, zoom, ...restProps } = props
         // @ts-expect-error
         const { landscape: _l, color: _c, ...divProps } = restProps
 
         const color = 'color' in props ? props.color : undefined
         const landscape = 'landscape' in props ? props.landscape : undefined
 
-        const style = useMemo(() => (landscape && DeviceOptions[device].hasLandscape) ? ({ width: height, height: width }) : ({ width, height }), [width, height, landscape, device])
+        const style = useMemo(
+            () => (landscape && DeviceOptions[device].hasLandscape)
+                ? ({ width: height, height: width, transform: zoom !== undefined ? `scale(${zoom})` : undefined })
+                : ({ width, height, transform: zoom !== undefined ? `scale(${zoom})` : undefined }),
+            [width, height, landscape, device, zoom],
+        )
 
         return (
             <div

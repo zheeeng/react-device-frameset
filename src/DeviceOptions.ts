@@ -119,6 +119,7 @@ type DevicesType<R extends Record<string, DeviceType<string, readonly string[]>>
         landscape: R[key]['hasLandscape'] extends true ? (boolean | undefined) : never
         width?: number,
         height?: number,
+        zoom?: number,
     }, never>>>
 }[keyof R]
 

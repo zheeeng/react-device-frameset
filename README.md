@@ -44,19 +44,19 @@ export const App = () => {
 DeviceFramesetProps:
 
 ```ts (signature)
-| { device: 'iPhone X', landscape?: boolean, width?: number, height?: number }
-| { device: 'iPhone 8', color: 'black' | 'silver' | 'gold', landscape?: boolean, width?: number, height?: number }
-| { device: 'iPhone 8 Plus', color: 'black' | 'silver' | 'gold', landscape?: boolean, width?: number, height?: number }
-| { device: 'iPhone 5s', color: 'black' | 'silver' | 'gold', landscape?: boolean, width?: number, height?: number }
-| { device: 'iPhone 5c', color: 'white' | 'red' | 'yellow' | 'green' | 'blue', landscape?: boolean, width?: number, height?: number }
-| { device: 'iPhone 4s', color: 'black' | 'silver', landscape?: boolean, width?: number, height?: number }
-| { device: 'Galaxy Note 8', landscape?: boolean, width?: number, height?: number }
-| { device: 'Nexus 5', landscape?: boolean, width?: number, height?: number }
-| { device: 'Lumia 920', color: 'black' | 'white' | 'yellow' | 'red' | 'blue', landscape?: boolean, width?: number, height?: number }
-| { device: 'Samsung Galaxy S5', color: 'white' | 'black', landscape?: boolean, width?: number, height?: number }
-| { device: 'HTC One', landscape?: boolean, width?: number, height?: number }
-| { device: 'iPad Mini', color: 'black' | 'silver', landscape?: boolean, width?: number, height?: number }
-| { device: 'MacBook Pro' }
+| { device: 'iPhone X', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'iPhone 8', color: 'black' | 'silver' | 'gold', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'iPhone 8 Plus', color: 'black' | 'silver' | 'gold', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'iPhone 5s', color: 'black' | 'silver' | 'gold', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'iPhone 5c', color: 'white' | 'red' | 'yellow' | 'green' | 'blue', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'iPhone 4s', color: 'black' | 'silver', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'Galaxy Note 8', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'Nexus 5', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'Lumia 920', color: 'black' | 'white' | 'yellow' | 'red' | 'blue', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'Samsung Galaxy S5', color: 'white' | 'black', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'HTC One', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'iPad Mini', color: 'black' | 'silver', landscape?: boolean, width?: number, height?: number, zoom?: number }
+| { device: 'MacBook Pro', zoom?: number }
 ```
 
 ## If you like the frameset selector?
@@ -94,8 +94,8 @@ type DeviceName = "iPhone X" | "iPhone 8" | "iPhone 8 Plus" | "iPhone 5s" | "iPh
 type DeviceEmulatorProps = {
     banDevices?: DeviceName[]
     children: (props: DeviceFramesetProps) => React.ReactNode,
-    value?: DeviceName,
-    onChange?: (deviceName: DeviceName) => void, 
+    value?: DeviceFramesetProps,
+    onChange?: (deviceConfig: DeviceFramesetProps) => void, 
 }
 ```
 

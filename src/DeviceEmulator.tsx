@@ -5,24 +5,40 @@ import { DeviceName, DeviceNames } from './DeviceOptions'
 export type DeviceEmulatorProps = React.HTMLAttributes<HTMLDivElement> & {
     banDevices?: DeviceName[]
     children: (props: DeviceFramesetProps) => React.ReactNode,
-    value?: DeviceName,
-    onChange?: (deviceName: DeviceName) => void,
+    value?: DeviceFramesetProps,
+    onChange?: (deviceConfig: DeviceFramesetProps) => void,
 }
+
+const zooms = [
+    0.5, 0.75, 1, 1.25, 1.5
+]
 
 export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmulator ({ children, value, onChange, banDevices = [], ...divProps }) {
     const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)) as Array<keyof typeof DeviceOptions>, [])
     const [deviceName, setDeviceName] = useState<DeviceName>(deviceNames[0] ?? '')
-    const selectedDeviceName = useMemo(() => value ?? deviceName, [value, deviceName])
+
+    const selectedDeviceName = useMemo(() => value?.device ?? deviceName, [value, deviceName])
 
     const handleSelectChange = useCallback(
         (event: React.ChangeEvent<HTMLSelectElement>) => {
             const newDeviceName = event.target.value as DeviceName
             if (!deviceNames.includes(newDeviceName)) throw new Error(`Invalid device name for ${newDeviceName}`)
 
-            onChange?.(newDeviceName)
             setDeviceName(newDeviceName)
         },
-        [deviceNames, onChange],
+        [deviceNames],
+    )
+
+    const [selectedZoom, setSelectedZoom] = useState(zooms[2])
+
+    const handleSelectZoomChange = useCallback(
+        (event: React.ChangeEvent<HTMLSelectElement>) => {
+            const newZoom = +event.target.value
+            if (!zooms.includes(newZoom)) throw new Error(`Invalid device zoom for ${newZoom}`)
+
+            setSelectedZoom(newZoom)
+        },
+        [deviceNames],
     )
 
     const { colors, hasLandscape, width, height } = useMemo(() => DeviceOptions[selectedDeviceName], [selectedDeviceName])
@@ -43,14 +59,22 @@ export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmu
     )
 
     const deviceFramesetProps = useMemo(
-        () => ({
+        () => value ?? ({
             device: selectedDeviceName,
             color: firstColor,
             landscape: isLandscapeChecked,
             width,
             height,
+            zoom: selectedZoom,
         }) as DeviceFramesetProps,
-        [selectedDeviceName, firstColor, isLandscapeChecked, width, height],
+        [value, selectedDeviceName, firstColor, isLandscapeChecked, width, height, selectedZoom],
+    )
+
+    useEffect(
+        () => {
+            onChange?.(deviceFramesetProps)
+        },
+        [onChange, deviceFramesetProps]
     )
 
     return (
@@ -67,6 +91,14 @@ export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmu
                 <input disabled value={width} />
                 <span>x</span>
                 <input disabled value={height} />
+                <select value={selectedZoom} onChange={handleSelectZoomChange}>
+                    {zooms.map((zoom) => (
+                        <option
+                            key={zoom}
+                            value={zoom}
+                        >{zoom * 100}%</option>
+                    ))}
+                </select>
                 <label>Landscape:</label>
                 <input type="checkbox" checked={!!isLandscapeChecked} disabled={!hasLandscape} onChange={handleIsLandscapeChange}/>
             </section>
