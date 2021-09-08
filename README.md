@@ -16,7 +16,11 @@ This is yet another device frameset component for React.
 * [![language](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](http://typescriptlang.org/) Type Safe and under maintainable
 * Sample for reference
 
+  * Device Selector
 ![frameset-screenshot](https://user-images.githubusercontent.com/1303154/120062053-a58a6200-c092-11eb-9fec-fa0dd3609645.png)
+
+  * Device Emulator
+![frameset-screenshot](https://user-images.githubusercontent.com/1303154/132490604-f6d05da8-835d-437f-9b10-5ffec76e661f.png)
 
 ## Installation
 
