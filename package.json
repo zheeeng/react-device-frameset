@@ -34,7 +34,7 @@
     "build:site": "rm -rf dist && vite build --outDir dist",
     "build:ssr": "rm -rf dist && vite-pages ssr",
     "build:pack": "npm run build:lib && npm run build:css && npm run build:readme",
-    "build:pages": "npm run build:pack && npm run build:ssr",
+    "build:pages": "npm run build:pack && npm run build:site",
     "prepublishOnly": "npm run build:pack",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -63,7 +63,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "react-router-dom": "^5.3.0",
     "sass": "^1.45.1",
-    "serve": "^11.3.2",
+    "serve": "^12.0.1",
     "vite": "^2.7.9",
     "vite-pages-theme-basic": "^3.1.0",
     "vite-plugin-mdx": "^3.5.10",

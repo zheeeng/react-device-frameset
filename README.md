@@ -60,7 +60,7 @@ DeviceFramesetProps:
 | { device: 'Samsung Galaxy S5', color: 'white' | 'black', landscape?: boolean, width?: number, height?: number, zoom?: number }
 | { device: 'HTC One', landscape?: boolean, width?: number, height?: number, zoom?: number }
 | { device: 'iPad Mini', color: 'black' | 'silver', landscape?: boolean, width?: number, height?: number, zoom?: number }
-| { device: 'MacBook Pro', zoom?: number }
+| { device: 'MacBook Pro', width?: number, height?: number, zoom?: number }
 ```
 
 ## If you like the frameset selector?
