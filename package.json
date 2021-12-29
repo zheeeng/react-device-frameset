@@ -40,8 +40,8 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "files": [
     "dist",
@@ -50,24 +50,24 @@
   "devDependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@types/node": "^15.6.1",
-    "@types/react": "^17.0.3",
-    "@types/react-router-dom": "^5.1.7",
-    "@vitejs/plugin-react-refresh": "^1.3.1",
-    "gh-pages": "^3.2.0",
+    "@types/node": "^15.14.9",
+    "@types/react": "^17.0.38",
+    "@types/react-router-dom": "^5.3.2",
+    "@vitejs/plugin-react-refresh": "^1.3.6",
+    "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.3",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^4.1.1",
     "gulp-sourcemaps": "^3.0.0",
-    "react-router-dom": "^5.2.0",
-    "sass": "^1.34.0",
+    "react-router-dom": "^5.3.0",
+    "sass": "^1.45.1",
     "serve": "^11.3.2",
-    "vite": "^2.0.5",
-    "vite-pages-theme-basic": "^3.0.1",
-    "vite-plugin-mdx": "^3.3.1",
-    "vite-plugin-react-pages": "^3.0.0",
-    "vite-plugin-virtual-plain-text": "^1.0.5"
+    "vite": "^2.7.9",
+    "vite-pages-theme-basic": "^3.1.0",
+    "vite-plugin-mdx": "^3.5.10",
+    "vite-plugin-react-pages": "^3.1.3",
+    "vite-plugin-virtual-plain-text": "^1.1.0"
   }
 }
