@@ -27,14 +27,13 @@
   "main": "lib/DeviceFrameset.js",
   "scripts": {
     "dev": "vite serve",
-    "build": "npm run build:pages",
+    "build": "npm run build:pack",
     "build:lib": "rm -rf lib && tsc -p tsconfig.json",
     "build:css": "gulp buildCss",
     "build:readme": "gulp genSignature",
-    "build:site": "rm -rf dist && vite build --outDir dist",
     "build:ssr": "rm -rf dist && vite-pages ssr",
     "build:pack": "npm run build:lib && npm run build:css && npm run build:readme",
-    "build:pages": "npm run build:pack && npm run build:site",
+    "build:pages": "npm run build:pack && npm run build:ssr",
     "prepublishOnly": "npm run build:pack",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
