@@ -28,7 +28,7 @@ function buildCss () {
 }
 
 function genSignature () {   
-   const DeviceOptions = require('./lib/DeviceOptions').DeviceOptions
+   const DeviceOptions = require('./lib/index').DeviceOptions
    const signature = Object.keys(DeviceOptions).map((key) => {
       const [device, info] = [key, DeviceOptions[key]]
       const deviceSignature = `device: '${device}'`

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ES6",
     "jsx": "react",
     "lib": ["ES2015", "DOM"],
     "declaration": true,
