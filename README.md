@@ -25,7 +25,7 @@ This is yet another device frameset component for React.
 ## Installation
 
 ```bash
-yarn add react-device-frameset (or npm)
+yarn add react-device-frameset (or npm/pnpm)
 ```
 
 ## Usage
