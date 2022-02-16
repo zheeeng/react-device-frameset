@@ -10,8 +10,6 @@
     "build:example": "pnpm build --filter react-device-frameset-example",
     "lint": "eslint ./**/*.{ts,tsx}",
     "lint:fix": "eslint ./**/*.{ts,tsx} --fix",
-    "predeploy": "pnpm build",
-    "deploy": "pnpm depoly --filter react-device-frameset-example",
     "prepublish": "pnpm build"
   },
   "dependencies": {
