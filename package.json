@@ -5,7 +5,7 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:lib": "pnpm dev --filter react-device-frameset",
     "dev:example": "pnpm dev --filter react-device-frameset-example",
-    "build": "pnpm build:lib & pnpm build:example",
+    "build": "pnpm build:lib && pnpm build:example",
     "build:lib": "pnpm build --filter react-device-frameset",
     "build:example": "pnpm build --filter react-device-frameset-example",
     "lint": "eslint ./**/*.{ts,tsx}",
