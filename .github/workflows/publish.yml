@@ -18,3 +18,5 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          package: ./packages/react-device-frameset/package.json
+          dry-run: true
