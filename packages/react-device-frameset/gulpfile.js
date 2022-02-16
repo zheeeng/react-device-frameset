@@ -59,14 +59,14 @@ function genSignature () {
 
    console.log({ signature })
 
-   return src('../../README.md', {base: './'})
+   return src('../../README.md')
       .pipe(replace(/```ts\s\(signature\)(.|[\r\n])*?```/, `\`\`\`ts (signature)\n${signature}\n\`\`\``))
-      .pipe(dest('./'));
+      .pipe(dest('../../'));
 }
 
 function moveReadme () {
-   return src('../../README.md', {base: './'})
-      .pipe(dest('./'));
+   return src('../../README.md')
+     .pipe(dest('./'));
 }
 
 exports.buildCss = buildCss
