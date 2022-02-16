@@ -1,0 +1,70 @@
+{
+  "name": "react-device-frameset",
+  "author": "Zheeeng <hi@zheeeng.me>",
+  "description": "This is yet another device frameset component for React.",
+  "keywords": [
+    "frameset",
+    "component",
+    "simulator",
+    "emulator",
+    "frame",
+    "device",
+    "phone",
+    "tablet",
+    "pc",
+    "mac",
+    "ios",
+    "android",
+    "frameset",
+    "react",
+    "component",
+    "vite",
+    "typescript"
+  ],
+  "repository": "zheeeng/react-device-frameset",
+  "version": "1.2.2",
+  "license": "MIT",
+  "sideEffects": [
+    "dist/styles/*.css"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "default": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json",
+    "./*": "./dist/*"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:lib": "pnpm build:lib -- --watch",
+    "dev:css": "gulp watchBuildCss",
+    "build": "pnpm build:pack",
+    "build:lib": "rm -rf lib && tsup src/index.ts --format cjs,esm --dts",
+    "build:css": "gulp buildCss",
+    "build:readme": "gulp genSignature && gulp moveReadme",
+    "build:pack": "pnpm build:lib -- --clean && pnpm build:css && pnpm build:readme",
+    "build:pages": "pnpm build:pack && pnpm build:site",
+    "prepublish": "pnpm build:pack"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-sass": "^4.1.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "tsup": "^5.11.13"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  }
+}
