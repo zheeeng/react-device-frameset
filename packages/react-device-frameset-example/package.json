@@ -7,7 +7,7 @@
     "build": "pnpm build:site",
     "build:site": "rm -rf dist && vite build --outDir dist",
     "serve": "serve -s dist",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react-device-frameset": "workspace:*"
