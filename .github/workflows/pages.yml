@@ -14,9 +14,9 @@ jobs:
       - name: Set-up Node
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
-      - run: yarn install
-      - run: yarn build
+          node-version: "14.x"
+      - run: yarn global add pnpm
+      - run: pnpm install
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2
         with:
