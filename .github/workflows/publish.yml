@@ -12,8 +12,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - run: yarn install
+      - run: yarn global add pnpm
+      - run: pnpm install
       - name: Publish
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          package: ./packages/react-device-frameset/package.json
+          dry-run: true

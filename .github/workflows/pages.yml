@@ -14,17 +14,18 @@ jobs:
       - name: Set-up Node
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
-      - run: yarn install
-      - run: yarn build
+          node-version: "14.x"
+      - run: yarn global add pnpm
+      - run: pnpm install
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: dist
+          build_dir: packages/react-device-frameset-example/dist
           fqdn: react-device-frameset.zheeeng.me
           author: Zheeeng <hi@zheeeng.me>
           jekyll: false
+          dry_run: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

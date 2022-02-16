@@ -14,7 +14,7 @@ const zooms = [
 ]
 
 export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmulator ({ children, value, onChange, banDevices = [], ...divProps }) {
-    const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)) as Array<keyof typeof DeviceOptions>, [])
+    const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)), [banDevices])
     const [deviceName, setDeviceName] = useState<DeviceName>(deviceNames[0] ?? '')
 
     const selectedDeviceName = useMemo(() => value?.device ?? deviceName, [value, deviceName])
@@ -38,12 +38,12 @@ export const DeviceEmulator = React.memo<DeviceEmulatorProps>(function DeviceEmu
 
             setSelectedZoom(newZoom)
         },
-        [deviceNames],
+        [],
     )
 
     const { colors, hasLandscape, width, height } = useMemo(() => DeviceOptions[selectedDeviceName], [selectedDeviceName])
 
-    const firstColor = useMemo(() => colors[0]!, [colors])
+    const firstColor = useMemo(() => colors[0], [colors])
 
     const [isLandscape, setIsLandscape] = useState<boolean | undefined>(undefined)
 

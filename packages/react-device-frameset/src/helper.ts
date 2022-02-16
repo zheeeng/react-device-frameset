@@ -6,4 +6,4 @@ export type KeysOfSubType<T, F> = {
 }[keyof T]
 export type OmitFieldByType<T, F> = Omit<T, KeysOfType<T, F>>
 export type OptionField<T> = Omit<T, KeysOfSubType<T, undefined>> & Partial<Pick<T, KeysOfSubType<T, undefined>>>
-export type Compute<A extends any> = { [K in keyof A]: A[K] } & unknown
+export type Compute<A> = { [K in keyof A]: A[K] } & unknown

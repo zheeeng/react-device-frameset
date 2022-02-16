@@ -10,7 +10,7 @@ export type DeviceSelectorProps = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSelector ({ children, value, onChange, banDevices = [], ...divProps }) {
-    const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)) as Array<keyof typeof DeviceOptions>, [])
+    const deviceNames = useMemo(() => DeviceNames.filter(devName => !banDevices.includes(devName)), [banDevices])
     const [deviceName, setDeviceName] = useState<DeviceName>(deviceNames[0] ?? '')
     const selectedDeviceName = useMemo(() => value ?? deviceName, [value, deviceName])
 
@@ -30,9 +30,9 @@ export const DeviceSelector = React.memo<DeviceSelectorProps>(function DeviceSel
 
     const { colors, hasLandscape, width, height } = useMemo(() => DeviceOptions[selectedDeviceName], [selectedDeviceName])
 
-    const firstColor = useMemo(() => colors[0]!, [colors])
+    const firstColor = useMemo(() => colors[0], [colors])
 
-    const [selectedColor, setSelectedColor] = useState<typeof colors[number]>(firstColor)
+    const [selectedColor, setSelectedColor] = useState<typeof colors[number] | undefined>(firstColor)
 
     const handleColorChange = useCallback(
         (event: React.MouseEvent<HTMLLIElement>) => {

@@ -1,9 +1,9 @@
-import { createTheme } from 'vite-pages-theme-basic'
+import { createTheme } from 'vite-pages-theme-doc'
 
 export default createTheme({
   topNavs: [
     {
-      text: 'Github ⭐',
+      label: 'Github ⭐',
       href: 'https://github.com/zheeeng/react-device-frameset',
     },
   ],

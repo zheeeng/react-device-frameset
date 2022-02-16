@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "jsx": "react",
+    "target": "ES6",
+    "jsx": "react-jsx",
     "lib": ["ES2015", "DOM"],
     "declaration": true,
     "moduleResolution": "Node",
@@ -13,8 +13,6 @@
     "strictBindCallApply": true,
     "strictPropertyInitialization": true,
     "alwaysStrict": true,
-    "outDir": "lib",
     "noErrorTruncation": true
-  },
-  "include": ["src/**/*"]
+  }
 }

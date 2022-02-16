@@ -1,0 +1,25 @@
+{
+  "name": "react-device-frameset-example",
+  "private": true,
+  "description": "react-device-frameset example",
+  "scripts": {
+    "dev": "vite serve",
+    "build": "pnpm build:site",
+    "build:site": "rm -rf dist && vite build --outDir dist",
+    "serve": "serve -s dist",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "react-device-frameset": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.2.0",
+    "gh-pages": "^3.2.3",
+    "serve": "^12.0.1",
+    "vite": "^2.5.6",
+    "vite-pages-theme-doc": "^3.0.0",
+    "vite-plugin-mdx": "^3.5.6",
+    "vite-plugin-react-pages": "^3.0.9",
+    "vite-plugin-virtual-plain-text": "^1.2.2"
+  }
+}
