@@ -10,17 +10,9 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "react": "^17.0.1",
-    "react-device-frameset": "workspace:*",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0"
+    "react-device-frameset": "workspace:*"
   },
   "devDependencies": {
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
-    "@types/node": "^15.14.9",
-    "@types/react": "^17.0.3",
-    "@types/react-router-dom": "^5.1.7",
     "@vitejs/plugin-react": "^1.2.0",
     "gh-pages": "^3.2.3",
     "serve": "^12.0.1",

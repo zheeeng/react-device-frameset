@@ -4,6 +4,11 @@ importers:
 
   .:
     specifiers:
+      '@mdx-js/mdx': ^1.6.22
+      '@mdx-js/react': ^1.6.22
+      '@types/node': ^15.14.9
+      '@types/react': ^17.0.3
+      '@types/react-router-dom': ^5.1.7
       '@typescript-eslint/eslint-plugin': ^5.11.0
       '@typescript-eslint/parser': ^5.11.0
       eslint: ^8.9.0
@@ -12,8 +17,20 @@ importers:
       eslint-plugin-react-hooks: ^4.3.0
       npm-run-all: ^4.1.5
       pnpm: ^6.31.0
+      react: ^17.0.1
+      react-dom: ^17.0.1
+      react-router-dom: ^5.2.0
       typescript: ^4.5.5
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-router-dom: 5.3.0_react@17.0.2
     devDependencies:
+      '@mdx-js/mdx': 1.6.22
+      '@mdx-js/react': 1.6.22_react@17.0.2
+      '@types/node': 15.14.9
+      '@types/react': 17.0.39
+      '@types/react-router-dom': 5.3.3
       '@typescript-eslint/eslint-plugin': 5.12.0_c467cf9bb49b295941e83ce479a578b7
       '@typescript-eslint/parser': 5.12.0_eslint@8.9.0+typescript@4.5.5
       eslint: 8.9.0
@@ -46,17 +63,9 @@ importers:
 
   packages/react-device-frameset-example:
     specifiers:
-      '@mdx-js/mdx': ^1.6.22
-      '@mdx-js/react': ^1.6.22
-      '@types/node': ^15.14.9
-      '@types/react': ^17.0.3
-      '@types/react-router-dom': ^5.1.7
       '@vitejs/plugin-react': ^1.2.0
       gh-pages: ^3.2.3
-      react: ^17.0.1
       react-device-frameset: workspace:*
-      react-dom: ^17.0.1
-      react-router-dom: ^5.2.0
       serve: ^12.0.1
       vite: ^2.5.6
       vite-pages-theme-doc: ^3.0.0
@@ -64,16 +73,8 @@ importers:
       vite-plugin-react-pages: ^3.0.9
       vite-plugin-virtual-plain-text: ^1.2.2
     dependencies:
-      react: 17.0.2
       react-device-frameset: link:../react-device-frameset
-      react-dom: 17.0.2_react@17.0.2
-      react-router-dom: 5.3.0_react@17.0.2
     devDependencies:
-      '@mdx-js/mdx': 1.6.22
-      '@mdx-js/react': 1.6.22_react@17.0.2
-      '@types/node': 15.14.9
-      '@types/react': 17.0.39
-      '@types/react-router-dom': 5.3.3
       '@vitejs/plugin-react': 1.2.0
       gh-pages: 3.2.3
       serve: 12.0.1
@@ -347,7 +348,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.16.7
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.16.7_@babel+core@7.12.9
     dev: true
