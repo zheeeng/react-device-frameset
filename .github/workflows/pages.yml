@@ -23,7 +23,6 @@ jobs:
           fqdn: react-device-frameset.zheeeng.me
           author: Zheeeng <hi@zheeeng.me>
           jekyll: false
-          dry_run: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

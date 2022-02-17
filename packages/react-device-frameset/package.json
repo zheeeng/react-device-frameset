@@ -51,8 +51,7 @@
     "build:css": "gulp buildCss",
     "build:readme": "gulp genSignature && gulp moveReadme",
     "build:pack": "pnpm build:lib -- --clean && pnpm build:css && pnpm build:readme",
-    "build:pages": "pnpm build:pack && pnpm build:site",
-    "prepublish": "pnpm build:pack"
+    "build:pages": "pnpm build:pack && pnpm build:site"
   },
   "devDependencies": {
     "@types/react": "^17.0.39",
