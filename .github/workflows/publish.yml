@@ -1,19 +1,21 @@
-name: npm-publish
+name: Publish
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    if: github.repository == 'zheeeng/react-device-frameset'
+    runs-on: ubuntu-latest  
     steps:
-      - name: Check
-        uses: actions/checkout@v1
-      - name: Set-up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "12.x"
-      - run: yarn global add pnpm
-      - run: pnpm install
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        uses: ./.github/actions/build
+
       - name: Publish
         uses: JS-DevTools/npm-publish@v1
         with:

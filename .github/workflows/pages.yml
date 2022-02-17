@@ -1,4 +1,4 @@
-name: github-pages
+name: Pages
 
 on:
   push:
@@ -6,18 +6,15 @@ on:
       - main
 
 jobs:
-  build-test-deploy:
+  pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Set-up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14.x"
-      - run: yarn global add pnpm
-      - run: pnpm install
-      - run: pnpm build
+
+      - name: Build
+        uses: ./.github/actions/build
+
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2
         with:

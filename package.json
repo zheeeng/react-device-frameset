@@ -9,8 +9,7 @@
     "build:lib": "pnpm build --filter react-device-frameset",
     "build:example": "pnpm build --filter react-device-frameset-example",
     "lint": "eslint ./**/*.{ts,tsx}",
-    "lint:fix": "eslint ./**/*.{ts,tsx} --fix",
-    "prepublish": "pnpm build"
+    "lint:fix": "eslint ./**/*.{ts,tsx} --fix"
   },
   "dependencies": {
     "react": "^17.0.1",
