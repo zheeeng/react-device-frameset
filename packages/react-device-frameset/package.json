@@ -47,11 +47,10 @@
     "dev:lib": "pnpm build:lib -- --watch",
     "dev:css": "gulp watchBuildCss",
     "build": "pnpm build:pack",
-    "build:lib": "rm -rf lib && tsup src/index.ts --format cjs,esm --dts",
+    "build:lib": "tsup src/index.ts --format cjs,esm --dts --clean",
     "build:css": "gulp buildCss",
     "build:readme": "gulp genSignature && gulp moveReadme",
-    "build:pack": "pnpm build:lib -- --clean && pnpm build:css && pnpm build:readme",
-    "build:pages": "pnpm build:pack && pnpm build:site"
+    "build:pack": "pnpm build:lib && pnpm build:css && pnpm build:readme"
   },
   "devDependencies": {
     "@types/react": "^17.0.39",
