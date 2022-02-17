@@ -26,6 +26,10 @@ runs:
         version: 6
         run_install: true
 
+    - name: Lint
+      run: pnpm lint
+      shell: bash
+
     - name: Build
       run: pnpm build
       shell: bash
