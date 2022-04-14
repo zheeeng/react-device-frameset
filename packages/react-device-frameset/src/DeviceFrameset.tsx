@@ -5,11 +5,19 @@ import { DeviceOptions } from './DeviceOptions'
 
 export { DeviceOptions, DeviceFramesetProps }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function omit<T extends Record<string, any>, K extends string> (item: T, keys: K[]): Omit<T, K> {
+    const clone = { ...item }
+    for (const key of keys) {
+        delete clone[key]
+    }
+    return clone
+}
+
 export const DeviceFrameset = React.memo<DeviceFramesetProps>(
     function DeviceFrameset(props) {
         const { children, device, width, height, zoom, ...restProps } = props
-        // @ts-expect-error: wait for ts 4.8
-        const { landscape: _l, color: _c, ...divProps } = restProps
+        const divProps = omit(restProps, ['landscape', 'color'])
 
         const color = 'color' in props ? props.color : undefined
         const landscape = 'landscape' in props ? props.landscape : undefined
