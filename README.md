@@ -32,7 +32,7 @@ yarn add react-device-frameset (or npm/pnpm)
 
 ```tsx
 import { DeviceFrameset } from 'react-device-frameset'
-import 'react-device-frameset/styles/marvel-devices.min.css'
+import 'react-device-frameset/dist/styles/marvel-devices.min.css'
 
 export const App = () => {
     return (
@@ -78,8 +78,8 @@ type DeviceEmulatorProps = {
 
 ```tsx
 import { DeviceFrameset, DeviceSelector } from 'react-device-frameset'
-import 'react-device-frameset/styles/marvel-devices.min.css'
-import 'react-device-frameset/styles/device-selector.min.css'
+import 'react-device-frameset/dist/styles/marvel-devices.min.css'
+import 'react-device-frameset/dist/styles/device-selector.min.css'
 
 export const App = () => {
     return (
@@ -105,8 +105,8 @@ type DeviceEmulatorProps = {
 
 ```tsx
 import { DeviceFrameset, DeviceEmulator } from 'react-device-frameset'
-import 'react-device-frameset/styles/marvel-devices.min.css'
-import 'react-device-frameset/styles/device-emulator.min.css'
+import 'react-device-frameset/dist/styles/marvel-devices.min.css'
+import 'react-device-frameset/dist/styles/device-emulator.min.css'
 
 export const App = () => {
     return (
