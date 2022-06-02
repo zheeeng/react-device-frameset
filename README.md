@@ -32,7 +32,7 @@ yarn add react-device-frameset (or npm/pnpm)
 
 ### Stylesheet importing
 
-`react-device-frameset` supoorts [conditional exports](https://nodejs.org/api/packages.html#conditional-exports).
+`react-device-frameset` supports [conditional exports](https://nodejs.org/api/packages.html#conditional-exports).
 
 If the application bundler supports this feature and above node v12.11.0, you can import the stylesheet through the recommended path `react-device-frameset/styles`, it is largely supported in real developing environments, otherwise, you need to import it from `react-device-frameset/dist/styles`.
 
