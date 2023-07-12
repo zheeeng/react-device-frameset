@@ -51,7 +51,7 @@ export const App = () => {
 }
 ```
 
-### Prop Signature
+### Props Signature
 
 DeviceFramesetProps:
 
