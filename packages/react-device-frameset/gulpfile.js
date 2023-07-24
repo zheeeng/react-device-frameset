@@ -1,6 +1,6 @@
 const { src, dest, watch } = require('gulp');
 
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const autoprefixer = require('gulp-autoprefixer')
 const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps');

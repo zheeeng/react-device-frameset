@@ -30,9 +30,17 @@ yarn add react-device-frameset (or npm/pnpm)
 
 ## Usage
 
+### Stylesheet importing
+
+`react-device-frameset` supports [conditional exports](https://nodejs.org/api/packages.html#conditional-exports).
+
+If the application bundler supports this feature and above node v12.11.0, you can import the stylesheet through the recommended path `react-device-frameset/styles`, it is largely supported in real developing environments, otherwise, you need to import it from `react-device-frameset/dist/styles`.
+
+### Basic Example
+
 ```tsx
 import { DeviceFrameset } from 'react-device-frameset'
-import 'react-device-frameset/lib/css/marvel-devices.min.css'
+import 'react-device-frameset/styles/marvel-devices.min.css'
 
 export const App = () => {
     return (
@@ -43,7 +51,7 @@ export const App = () => {
 }
 ```
 
-### Prop Signature
+### Props Signature
 
 DeviceFramesetProps:
 
@@ -78,8 +86,8 @@ type DeviceEmulatorProps = {
 
 ```tsx
 import { DeviceFrameset, DeviceSelector } from 'react-device-frameset'
-import 'react-device-frameset/lib/css/marvel-devices.min.css'
-import 'react-device-frameset/lib/css/device-selector.min.css'
+import 'react-device-frameset/styles/marvel-devices.min.css'
+import 'react-device-frameset/styles/device-selector.min.css'
 
 export const App = () => {
     return (
@@ -105,8 +113,8 @@ type DeviceEmulatorProps = {
 
 ```tsx
 import { DeviceFrameset, DeviceEmulator } from 'react-device-frameset'
-import 'react-device-frameset/lib/css/marvel-devices.min.css'
-import 'react-device-frameset/lib/css/device-emulator.min.css'
+import 'react-device-frameset/styles/marvel-devices.min.css'
+import 'react-device-frameset/styles/device-emulator.min.css'
 
 export const App = () => {
     return (
