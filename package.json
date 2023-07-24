@@ -3,34 +3,25 @@
   "private": false,
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
-    "dev:lib": "pnpm dev --filter react-device-frameset",
-    "dev:example": "pnpm dev --filter react-device-frameset-example",
+    "dev:lib": "pnpm --filter react-device-frameset dev",
+    "dev:example": "pnpm --filter react-device-frameset-example dev",
     "build": "pnpm build:lib && pnpm build:example",
-    "build:lib": "pnpm build --filter react-device-frameset",
-    "build:example": "pnpm build --filter react-device-frameset-example",
+    "build:lib": "pnpm --filter react-device-frameset build",
+    "build:example": "pnpm --filter react-device-frameset-example build",
     "lint": "eslint ./**/*.{ts,tsx}",
     "lint:fix": "eslint ./**/*.{ts,tsx} --fix"
   },
-  "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0"
-  },
   "devDependencies": {
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
     "@types/node": "^15.14.9",
-    "@types/react": "^17.0.3",
-    "@types/react-router-dom": "^5.1.7",
-    "@typescript-eslint/eslint-plugin": "^5.19.0",
-    "@typescript-eslint/parser": "^5.19.0",
-    "eslint": "^8.13.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.4.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "npm-run-all": "^4.1.5",
-    "pnpm": "^6.32.7",
-    "typescript": "^4.6.3"
+    "pnpm": "^8.6.10",
+    "typescript": "^5.1.6"
   },
   "engines": {
     "node": ">=14"
