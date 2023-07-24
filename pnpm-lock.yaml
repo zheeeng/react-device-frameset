@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 importers:
 
   .:
@@ -113,8 +109,8 @@ importers:
         specifier: ^4.1.4
         version: 4.1.4(@babel/core@7.22.9)(react@18.2.0)(rollup@3.26.3)(vite@4.4.6)
       vite-plugin-virtual-plain-text:
-        specifier: ^1.4.2
-        version: 1.4.2
+        specifier: ^1.4.3
+        version: 1.4.3
 
 packages:
 
@@ -6941,8 +6937,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-virtual-plain-text@1.4.2:
-    resolution: {integrity: sha512-sZKYNxB9Qdlh8nNyGchN50TPMBhZoqQjQ8z15VJcNW/Qs3EYfxEjCYCjFOltFJ8IWszLH71/Tu4hzTHrBwt8Nw==}
+  /vite-plugin-virtual-plain-text@1.4.3:
+    resolution: {integrity: sha512-H7sK86y9T0TgsAPYDrBoVhQMW8x4vq9JuUL8oQnzbxAX/payrVtooi72k3WaBXpfBHct6fvVtxOhAcDWFH/07g==}
     dev: true
 
   /vite@4.4.6(@types/node@15.14.9):
@@ -7121,3 +7117,7 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

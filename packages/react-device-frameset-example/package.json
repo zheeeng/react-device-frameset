@@ -23,6 +23,6 @@
     "vite": "^4.4.6",
     "vite-pages-theme-doc": "^4.1.6",
     "vite-plugin-react-pages": "^4.1.4",
-    "vite-plugin-virtual-plain-text": "^1.4.2"
+    "vite-plugin-virtual-plain-text": "^1.4.3"
   }
 }
