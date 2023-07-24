@@ -2,8 +2,7 @@ name: Build PNPM Project
 description: Install PNPM dependencies and execute build scripts
 inputs:
   node-version:
-    description: 'Specify the node version, defaults to 14.x'
-    default: '14.x'
+    default: '16.x'
 runs:
   using: composite
   steps:

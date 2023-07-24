@@ -21,9 +21,12 @@ importers:
         specifier: ^6.14.2
         version: 6.14.2(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
+      '@mdx-js/react':
+        specifier: ^2.1.5
+        version: 2.1.5(react@18.2.0)
       '@types/node':
-        specifier: ^15.14.9
-        version: 15.14.9
+        specifier: ^16.11.7
+        version: 16.11.7
       '@typescript-eslint/eslint-plugin':
         specifier: ^5.62.0
         version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.45.0)(typescript@5.1.6)
@@ -88,9 +91,6 @@ importers:
 
   packages/react-device-frameset-example:
     devDependencies:
-      '@mdx-js/react':
-        specifier: ^2.1.5
-        version: 2.1.5(react@18.2.0)
       '@types/react':
         specifier: ^17.0.3
         version: 17.0.39
@@ -105,7 +105,7 @@ importers:
         version: 14.2.0
       vite:
         specifier: ^4.4.6
-        version: 4.4.6(@types/node@15.14.9)
+        version: 4.4.6(@types/node@16.11.7)
       vite-pages-theme-doc:
         specifier: ^4.1.6
         version: 4.1.6
@@ -838,8 +838,12 @@ packages:
     resolution: {integrity: sha512-uq7O52wvo2Lggsx1x21tKZgqkJpvwCseBBPtX/nKQfpVlEsLOb11zZ1CRsWUKvJF0+lzuA9jwvA7Pr2Wt7i3xw==}
     dev: true
 
-  /@types/node@15.14.9:
-    resolution: {integrity: sha512-qjd88DrCxupx/kJD5yQgZdcYKZKSIGBVDIBE1/LTGcNm3d2Np/jxojkdePDdfnBHJc5W7vSMpbJ1aB7p/Py69A==}
+  /@types/node@16.11.7:
+    resolution: {integrity: sha512-QB5D2sqfSjCmTuWcBWyJ+/44bcjO7VbjSbOE0ucoVbAsSNQc4Lt6QkgkVXkTDwkL4z/beecZNDvVX15D4P8Jbw==}
+    dev: true
+
+  /@types/node@16.18.39:
+    resolution: {integrity: sha512-8q9ZexmdYYyc5/cfujaXb4YOucpQxAV4RMG0himLyDUOEr8Mr79VrqsFI+cQ2M2h89YIuy95lbxuYjxT4Hk4kQ==}
     dev: true
 
   /@types/prop-types@15.7.5:
@@ -885,7 +889,7 @@ packages:
     resolution: {integrity: sha512-4UqPv+2567NhMQuMLdKAyK4yzrfCqwaTt6bLhHEs8PFcxbHILsrxaY63n4wgE/BRLDWDQeI+WcTmkXKExh9hQg==}
     dependencies:
       '@types/expect': 1.20.4
-      '@types/node': 15.14.9
+      '@types/node': 16.18.39
     dev: true
 
   /@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.45.0)(typescript@5.1.6):
@@ -1028,7 +1032,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.9)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.9)
       react-refresh: 0.14.0
-      vite: 4.4.6(@types/node@15.14.9)
+      vite: 4.4.6(@types/node@16.11.7)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6923,7 +6927,7 @@ packages:
       ts-morph: 18.0.0
       typescript: 5.1.6
       unist-util-visit: 4.1.2
-      vite: 4.4.6(@types/node@15.14.9)
+      vite: 4.4.6(@types/node@16.11.7)
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/template'
@@ -6945,7 +6949,7 @@ packages:
     resolution: {integrity: sha512-H7sK86y9T0TgsAPYDrBoVhQMW8x4vq9JuUL8oQnzbxAX/payrVtooi72k3WaBXpfBHct6fvVtxOhAcDWFH/07g==}
     dev: true
 
-  /vite@4.4.6(@types/node@15.14.9):
+  /vite@4.4.6(@types/node@16.11.7):
     resolution: {integrity: sha512-EY6Mm8vJ++S3D4tNAckaZfw3JwG3wa794Vt70M6cNJ6NxT87yhq7EC8Rcap3ahyHdo8AhCmV9PTk+vG1HiYn1A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -6973,7 +6977,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 15.14.9
+      '@types/node': 16.11.7
       esbuild: 0.18.16
       postcss: 8.4.27
       rollup: 3.26.3
