@@ -11,6 +11,12 @@
     "lint": "eslint ./**/*.{ts,tsx}",
     "lint:fix": "eslint ./**/*.{ts,tsx} --fix"
   },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-device-frameset": "workspace:*",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2"
+  },
   "devDependencies": {
     "@types/node": "^15.14.9",
     "@typescript-eslint/eslint-plugin": "^5.62.0",

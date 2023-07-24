@@ -8,12 +8,6 @@
     "build:site": "rm -rf dist && vite build --outDir dist",
     "serve": "serve -s dist"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-device-frameset": "workspace:*",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.2"
-  },
   "devDependencies": {
     "@types/react": "^17.0.3",
     "@types/react-router-dom": "^5.1.7",

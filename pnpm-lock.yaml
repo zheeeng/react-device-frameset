@@ -1,8 +1,25 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-device-frameset:
+        specifier: workspace:*
+        version: link:packages/react-device-frameset
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-router-dom:
+        specifier: ^6.14.2
+        version: 6.14.2(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@types/node':
         specifier: ^15.14.9
@@ -70,19 +87,6 @@ importers:
         version: 7.1.0(postcss@8.4.27)(typescript@5.1.6)
 
   packages/react-device-frameset-example:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-device-frameset:
-        specifier: workspace:*
-        version: link:../react-device-frameset
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-router-dom:
-        specifier: ^6.14.2
-        version: 6.14.2(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@mdx-js/react':
         specifier: ^2.1.5
@@ -7117,7 +7121,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
