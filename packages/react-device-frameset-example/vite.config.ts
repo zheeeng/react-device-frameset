@@ -10,6 +10,8 @@ export default defineConfig({
     pages({
       pagesDir: path.join(__dirname, 'pages'),
     }),
-    virtualPlainText()
+    virtualPlainText({
+      namedExport: 'plainText'
+    })
   ],
 })
