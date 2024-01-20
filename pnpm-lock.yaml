@@ -99,19 +99,19 @@ importers:
         version: 5.1.7
       '@vitejs/plugin-react':
         specifier: ^4.0.3
-        version: 4.0.3(vite@4.4.12)
+        version: 4.0.3(vite@4.5.2)
       serve:
         specifier: ^14.2.0
         version: 14.2.0
       vite:
-        specifier: ^4.4.12
-        version: 4.4.12(@types/node@16.11.7)
+        specifier: ^4.5.2
+        version: 4.5.2(@types/node@16.11.7)
       vite-pages-theme-doc:
         specifier: ^4.1.6
         version: 4.1.6
       vite-plugin-react-pages:
         specifier: ^4.1.4
-        version: 4.1.4(@babel/core@7.22.9)(react@18.2.0)(rollup@3.29.4)(vite@4.4.12)
+        version: 4.1.4(@babel/core@7.22.9)(react@18.2.0)(rollup@3.29.4)(vite@4.5.2)
       vite-plugin-virtual-plain-text:
         specifier: ^1.4.3
         version: 1.4.3
@@ -1022,7 +1022,7 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: true
 
-  /@vitejs/plugin-react@4.0.3(vite@4.4.12):
+  /@vitejs/plugin-react@4.0.3(vite@4.5.2):
     resolution: {integrity: sha512-pwXDog5nwwvSIzwrvYYmA2Ljcd/ZNlcsSG2Q9CNDBwnsd55UGAyr2doXtB5j+2uymRCnCfExlznzzSFbBRcoCg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -1032,7 +1032,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.9)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.9)
       react-refresh: 0.14.0
-      vite: 4.4.12(@types/node@16.11.7)
+      vite: 4.5.2(@types/node@16.11.7)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6907,7 +6907,7 @@ packages:
     resolution: {integrity: sha512-qqrcWT4wbpU9amdegDtTDLVZw2VAySsfP6LOkD+0Y2fWT5U4x1tSWGD+/ourrm9H2/+KY38h0XpjJXWBecS/pw==}
     dev: true
 
-  /vite-plugin-react-pages@4.1.4(@babel/core@7.22.9)(react@18.2.0)(rollup@3.29.4)(vite@4.4.12):
+  /vite-plugin-react-pages@4.1.4(@babel/core@7.22.9)(react@18.2.0)(rollup@3.29.4)(vite@4.5.2):
     resolution: {integrity: sha512-OsFW0Cj3G/II3H9IuwyKZ9deyLlEBiYqTqcVKNSMK+ldkOn6LrJ3mE2rw7t3TizUIwVP3PZ3Npm6wnV21UoJrQ==}
     hasBin: true
     peerDependencies:
@@ -6938,7 +6938,7 @@ packages:
       ts-morph: 18.0.0
       typescript: 5.1.6
       unist-util-visit: 4.1.2
-      vite: 4.4.12(@types/node@16.11.7)
+      vite: 4.5.2(@types/node@16.11.7)
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/template'
@@ -6960,8 +6960,8 @@ packages:
     resolution: {integrity: sha512-H7sK86y9T0TgsAPYDrBoVhQMW8x4vq9JuUL8oQnzbxAX/payrVtooi72k3WaBXpfBHct6fvVtxOhAcDWFH/07g==}
     dev: true
 
-  /vite@4.4.12(@types/node@16.11.7):
-    resolution: {integrity: sha512-KtPlUbWfxzGVul8Nut8Gw2Qe8sBzWY+8QVc5SL8iRFnpnrcoCaNlzO40c1R6hPmcdTwIPEDkq0Y9+27a5tVbdQ==}
+  /vite@4.5.2(@types/node@16.11.7):
+    resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
